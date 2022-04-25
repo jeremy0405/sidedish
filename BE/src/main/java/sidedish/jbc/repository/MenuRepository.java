@@ -17,10 +17,7 @@ public interface MenuRepository extends CrudRepository<Menu, Integer> {
 		"select menu.id, name, description, price, menu_type, sale_type, image_path from menu where menu_type = :type")
 	List<MenuResponse> findAllByType(@Param("type") MenuType type);
 
-	@Query("select name, description, price, sale_type, delivery_info, fee, free_shipping_starting_price from menu where id = :menuId")
-	Optional<DetailMenu> findDetailMenu(@Param("menuId") int menuId);
+	Optional<Menu> findAllById(int adfdsfasdfdsfadsf);
 
-	@Query("select * from menu where id = :menuId")
-	Optional<Menu> findMenu(@Param("menuId") int menuId);
 
 }

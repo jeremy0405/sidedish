@@ -31,8 +31,8 @@ public class MenuService {
 	public DetailMenuResponse findDetailMenu(int menuId) {
 		DetailMenu detailMenu = menuRepository.findDetailMenu(menuId).orElseThrow();
 		List<DetailMenuImages> imageInfo = imageRepository.findByMenuId(menuId);
-
-		Optional<Menu> menu = menuRepository.findMenu(menuId);
+//
+		Optional<Menu> menu = menuRepository.findAllById(menuId);
 		System.out.println(menu.get());
 
 		return new DetailMenuResponse(detailMenu, imageInfo);
